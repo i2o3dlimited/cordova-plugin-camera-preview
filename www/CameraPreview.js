@@ -18,7 +18,7 @@ CameraPreview.setOnLogHandler = function(onSuccess, onError) {
   exec(onSuccess, onError, PLUGIN_NAME, "wLog", []);
 };
 
-CameraPreview.startCamera = function(options,onSuccess, onError){
+/*CameraPreview.startCamera = function(options,onSuccess, onError){
   options = options || {};
   if(typeof(options.x) === 'undefined'){
     options.x = 0;
@@ -49,6 +49,11 @@ CameraPreview.startCamera = function(options,onSuccess, onError){
   }
 
   exec(onSuccess, onError, PLUGIN_NAME, "startCamera", [options.x, options.y, options.width, options.height, options.camera, options.tapPhoto, options.previewDrag, options.toBack, options.alpha]);
+};*/
+
+CameraPreview.startCamera = function(rect, defaultCamera, tapEnabled, dragEnabled, toBack, alpha) {
+  if (typeof(alpha) === 'undefined') alpha = 1;
+  exec(null, null, PLUGIN_NAME, "startCamera", [rect.x, rect.y, rect.width, rect.height, defaultCamera, !!tapEnabled, !!dragEnabled, !!toBack, alpha]);
 };
 
 CameraPreview.stopCamera = function(onSuccess, onError){
