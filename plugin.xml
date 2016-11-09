@@ -10,7 +10,7 @@
   <issue>https://github.com/cordova-plugin-camera-preview/cordova-plugin-camera-preview/issues</issue>
 
   <js-module src="www/CameraPreview.js" name="CameraPreview">
-    <clobbers target="CameraPreview" />
+    <clobbers target="cordova.plugins.camerapreview" />
   </js-module>
 
   <platform name="android">
